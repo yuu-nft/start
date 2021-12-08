@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <!-- Moralis SDK code -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+  </head>
+  <body>
+    <h1>Gas Stats With Moralis</h1>
+
+    <button id="btn-login">Moralis Login</button>
+    <button id="btn-logout">Logout</button>
+
+    <script>
+      // connect to Moralis server
+
+      const serverUrl = "https://csinycixy7b5.usemoralis.com:2053/server";
+      const appId = "Hz3z7WnMgQGYRYQJebceD1tE4B959u0o6pZNtuhu";
+      Moralis.start({ serverUrl, appId });
+      
+      async function getNFTs(){
+        const options = { chain: 'eth', address: '0xaba49d9f50faea2b212fcc2aced7ae98e17817b4' };
+        const nfts = await Moralis.Web3API.account.getNFTs(options);
+        
+        console.log(nfts);
+      }
+      
+      getNFTs()
+
+    </script>
+  </body>
+</html>
