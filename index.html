@@ -23,7 +23,7 @@
         
         //console.log(nfts);
         
-        Array.from(nfts).forEach.call(function(nft){
+        Array.from(nfts).forEach(function(nft){
           let url = fixURL(nft.token_url);
           
           fetch(url)
